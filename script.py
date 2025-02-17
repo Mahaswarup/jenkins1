@@ -1,26 +1,23 @@
-import sys
+def add(a, b):
+    return a + b
 
-def length_converter():
-    print("Length Converter Selected")
+def subtract(a, b):
+    return a - b
 
-def weight_converter():
-    print("Weight Converter Selected")
+def multiply(a, b):
+    return a * b
 
-def temperature_converter():
-    print("Temperature Converter Selected")
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python script.py <option>")
-        sys.exit(1)
-
-    main_choice = sys.argv[1]  # Read argument from command-line
-
-    if main_choice == '1':
-        length_converter()
-    elif main_choice == '2':
-        weight_converter()
-    elif main_choice == '3':
-        temperature_converter()
+def divide(a, b):
+    if b != 0:
+        return a / b
     else:
-        print("Invalid choice")
+        return "Cannot divide by zero"
+
+# Taking user input
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+print(f"Addition: {add(num1, num2)}")
+print(f"Subtraction: {subtract(num1, num2)}")
+print(f"Multiplication: {multiply(num1, num2)}")
+print(f"Division: {divide(num1, num2)}")
